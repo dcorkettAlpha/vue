@@ -1,21 +1,23 @@
 /* global Vue*/
 
-Vue.component('', {
-//slot as template for li
-  template: ``,
-
-  data() {
-    return {
-
-    };
-  }
-});
-
-Vue.component('', {
-//slot as template for li
-  template: ''
+Vue.component('modal', {
+  template: `
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <slot></slot>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" @click="$emit('close-modal')"></button>
+  </div>
+  `
 });
 
 new Vue({
-  el: '#root'
+  el: '#root',
+
+  data: {
+    showModal: false
+  }
 });
