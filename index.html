@@ -12,7 +12,27 @@
   </head>
   <body>
     <div id="root">
-      <button :class="{ 'is-loading': isLoading }" @click="submit" :disabled="isDisabled">Click Red</button>
+
+      <h2>Incomplete Tasks</h2>
+      <ul>
+        <li v-for="task in incompleteTasks">{{task.description}}
+          <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </li>
+      </ul>
+
+      <h2>Completed Tasks</h2>
+      <ul>
+        <li v-for="task in completedTasks">{{task.description}}
+          <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </li>
+      </ul>
+
+      <h2>All Tasks</h2>
+      <ul>
+        <li v-for="task in tasks">{{task.description}}
+          <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </li>
+      </ul>
     </div>
 
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" charset="utf-8"></script>
@@ -23,17 +43,30 @@
 
         el: '#root',
         data: {
-          title: 'Dynamic title',
-          isLoading: false,
-          isDisabled: false,
+          tasks: [
+            { description: 'Go to the store', completed: true},
+            { description: 'Finish Tutorial', completed: false},
+            { description: 'Eat', completed: false},
+            { description: 'Sleep', completed: false},
+            { description: 'Be Merry', completed: false},
+            { description: 'Drink lots of water', completed: true},
+          ]
         },
         methods: {
-          submit: function() {
-            this.isLoading = !this.isLoading;
-            this.isDisabled = true;
+          checked(task) {
+            // this.tasks.completed = !this.tasks[key].completed;
+            task.completed = !task.completed;
           }
         },
-        mounted() {
+        computed: {
+          incompleteTasks() {
+            return this.tasks.filter(task => !task.completed);
+          },
+          completedTasks() {
+            return this.tasks.filter(task => task.completed);
+          },
+
+
 
         }
       })
