@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="root">
-      <button :class="{ 'is-loading': isLoading }" @click="submit" :disabled="isDisabled">Click Red</button>
+    
     </div>
 
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" charset="utf-8"></script>
@@ -23,19 +23,17 @@
 
         el: '#root',
         data: {
-          title: 'Dynamic title',
-          isLoading: false,
-          isDisabled: false,
+
         },
         methods: {
-          submit: function() {
-            this.isLoading = !this.isLoading;
-            this.isDisabled = true;
-          }
+
+        },
+        computed: {
+
         },
         mounted() {
 
-        }
+        },
       })
     </script>
   </body>
