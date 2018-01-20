@@ -15,22 +15,31 @@
 
       <h2>Incomplete Tasks</h2>
       <ul>
-        <li v-for="task in incompleteTasks">{{task.description}}
+        <li v-for="(task, index) in incompleteTasks">
+          <label>
+          {{task.description}}
           <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </label>
         </li>
       </ul>
 
       <h2>Completed Tasks</h2>
       <ul>
-        <li v-for="task in completedTasks">{{task.description}}
+        <li v-for="(task, index) in completedTasks">
+          <label>
+          {{task.description}}
           <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </label>
         </li>
       </ul>
 
       <h2>All Tasks</h2>
       <ul>
-        <li v-for="task in tasks">{{task.description}}
+        <li v-for="(task, index) in tasks">
+          <label>
+          {{task.description}}
           <input type="checkbox" :checked="task.completed" @change="checked(task)">
+        </label>
         </li>
       </ul>
     </div>
