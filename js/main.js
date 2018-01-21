@@ -1,21 +1,25 @@
 /* global Vue*/
 
-Vue.component('', {
-//slot as template for li
-  template: ``,
-
-  data() {
-    return {
-
-    };
+Vue.component('coupon', {
+  template: `
+    <input placeholer="enter coupon code" @blur="onCouponApplied"/>
+    `,
+  methods: {
+    onCouponApplied() {
+      this.$emit('applied');
+    }
   }
 });
 
-Vue.component('', {
-//slot as template for li
-  template: ''
-});
 
 new Vue({
-  el: '#root'
+  el: '#root',
+  data: {
+    couponApplied: false
+  },
+  methods: {
+    onCouponApplied() {
+      this.couponApplied = true;
+    }
+  }
 });
