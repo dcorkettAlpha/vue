@@ -1,19 +1,10 @@
 /* global Vue*/
 
-Vue.component('', {
-//slot as template for li
-  template: ``,
+Vue.component('progress-view', {
 
   data() {
-    return {
-
-    };
+    return { completionRate: 50 };
   }
-});
-
-Vue.component('', {
-//slot as template for li
-  template: ''
 });
 
 new Vue({

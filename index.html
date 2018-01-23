@@ -9,6 +9,17 @@
   <body>
     <div id="root">
 
+      <progress-view inline-template>
+        <!-- inline-template still needs a container for siblings-->
+        <div>
+          <h1>Progress through this course is {{ completionRate }}%</h1>
+
+          <button @click="(completionRate < 100 ? completionRate += 10 : completionRate)">Update Completion Rate</button>
+        </div>
+
+
+
+      </progress-view>
     </div>
 
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" charset="utf-8"></script>
