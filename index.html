@@ -8,7 +8,15 @@
   </head>
   <body>
     <div id="root">
+      <modal>
+        <template slot="header">Test</template>
 
+        <template slot="footer">
+          <!--  this over takes default slot value-->
+          <button class="button is-success">Save changes</button>
+        </template>
+
+      </modal>
     </div>
 
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" charset="utf-8"></script>
