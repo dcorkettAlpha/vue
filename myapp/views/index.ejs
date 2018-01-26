@@ -3,13 +3,28 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   </head>
   <body>
 
     <div id="app">
-      <ul>
-        <li v-for="skill in skills">{{skill}}</li>
-      </ul>
+      <form>
+        <div class="control">
+          <label for="name" class="label">Project Name</label>
+
+          <input type="text" id="name" name="name" class="input" v-model="name">
+        </div>
+
+        <div class="control">
+          <label for="description" class="label">Project description</label>
+
+          <input type="text" id="description" name="description" class="input" v-model="description">
+        </div>
+
+        <div class="control">
+          <button type="button" class="button is-primary" @click="onSubmit">Create</button>
+        </div>
+      </form>
     </div>
 
   </body>

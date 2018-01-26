@@ -1,17 +1,17 @@
+
 new Vue({
   el: '#app',
-
   data: {
-    skills: []
+    name: '',
+    description: ''
   },
 
-  mounted() {
+  methods: {
+    onSubmit() {
+      console.log('data', this.$data);
+      axios.post('/projects',this.$data);
+    }
     // make an ajax request to server and render res
 
-    axios.get('/skills').then(res =>{
-      console.log(res.data);
-      this.skills = res.data.skills;
-    }
-    );
   }
 });

@@ -6,9 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/skills', function(req, res) {
+router.post('/projects', function(req, res) {
+  console.log(req);
   res.send({
-    skills: ['Express', 'vue', 'js', 'scss']
+    data: req.body
   });
 });
 
