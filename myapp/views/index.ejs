@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-  </head>
-  <body>
 
-    <div id="app">
-      {{shared.firstName}} {{lastName}}
-    </div>
-    <div id="app2">
-      {{shared.firstName}} {{lastName}}
-    </div>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+</head>
 
-  </body>
+<body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js" charset="utf-8"></script>
+  <div id="app">
+    <!-- <input type="text" v-model="coupon"> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <!-- v-model is basically shorthand for the below - it binds a value and is associated to an event handler, the below is better used in custom inputs-->
 
-  <script src="javascripts/app.js" charset="utf-8"></script>
+    <!-- <input type="text" :value="coupon" @input="coupon = $event.target.value"> -->
+
+    <!--  coupon componenet is the same as above -->
+    <coupon v-model="coupon"></coupon>
+
+  </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js" charset="utf-8"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+<script src="javascripts/app.js" charset="utf-8"></script>
+
 </html>
+
+<style media="screen">
+input {
+  display: block;
+  position: absolute;
+  top: 200px;
+  left: 100px
+}
+</style>
