@@ -1,17 +1,20 @@
+let goatName = {
+    firstName: 'Fred'
+};
 
 new Vue({
   el: '#app',
   data: {
-    name: '',
-    description: ''
-  },
+    shared: goatName,
+    lastName: 'McGoatFace'
 
-  methods: {
-    onSubmit() {
-      console.log('data', this.$data);
-      axios.post('/projects',this.$data);
-    }
-    // make an ajax request to server and render res
+  }
+});
 
+new Vue({
+  el: '#app2',
+  data: {
+    shared: goatName,
+    lastName: 'Beardy'
   }
 });
